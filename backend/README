@@ -7,7 +7,7 @@ If the above steps did not work, what worked for me was:
 
 Installing an Integrated Development Environment/IDE.
 1. I used VSCode as my Python IDE.
-2. Installation for VSCode can be found [Here[(https://code.visualstudio.com/download). 
+2. Installation for VSCode can be found [Here](https://code.visualstudio.com/download). 
 3. Launch VSCode, and download the Python Extension from your browser if you have not yet. You can find the link (here)[https://marketplace.visualstudio.com/items?itemName=ms-python.python]
 
 FastAPI "Hello World"
