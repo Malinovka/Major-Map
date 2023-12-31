@@ -22,14 +22,14 @@ FastAPI "Hello World"
 5. Create a Virtual Environment by pressing CTRL + Shift + P, then Python: Create Environment > Venv > Requirements.txt. Click "ok"
 6. Create a new (Python) file and save it as "main.py"
 7. Paste the following in "main.py"
-  "from fastapi import FastAPI
+"from fastapi import FastAPI
 
-  app = FastAPI()
+app = FastAPI()
 
 
-  @app.get("/")
-  async def root():
-      return {"message": "Hello World"}"
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}"
 8. You may receive a pop-up on which configuration file to use, click on "FastAPI".
 9. Navigate to the "Run and Debug" category to the left of VSCode (fourth from the top) and click on "Run and Debug".
 10. A terminal output will be displayed at the bottom of VSCode, and youll find the http link, which would look something like this: INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit). 
