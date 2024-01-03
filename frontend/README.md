@@ -11,6 +11,14 @@ set up a new next.js
 
 open the next.js project
 1. After installation, open the project in your code editor
-2. navigate to nextjs-dashboard by typing the following comman on your terminal:
+2. navigate to nextjs-dashboard by entering the following command on your terminal:
      cd nextjs-dashboard
 
+Running the development server
+1. to run the project package, enter this command on your terminal: npm i
+2. to start the development server, enter this command on your terminal: npm run dev
+
+Final Result check:
+1. go to http://localhost:3000 on your browser
+2. Your home page should have the following text: Welcome to Acme. This is the example for the Next.js learn course, brought to you by Verce. Log-in".
+3. Here is the tutorial referenced: https://nextjs.org/learn/dashboard-app/getting-started 
