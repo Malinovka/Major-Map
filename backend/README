@@ -2,8 +2,12 @@ Installing FastAPI
 Reference Manual [Here](https://fastapi.tiangolo.com/tutorial/#install-fastapi]).
 If the above steps did not work, what worked for me was:
 1. Go to your start menu and type in "Manage App Execution Aliases" and turn off Python.
-2. Open Command Prompt from your start menu, and type "py -m pip install fastapi", then press enter.
-3. Then in the Command Prompt, type "py -m pip install uvicorn", then press enter.
+2. a) For Windows:
+        Open Command Prompt from your start menu, and type "py -m pip install fastapi", then press enter.
+2. b) For Mac:
+        Open Terminal and type "pip install fastapi uvicorn"
+3. For Windows:
+        Then in the Command Prompt, type "py -m pip install uvicorn", then press enter.
 
 Installing an Integrated Development Environment/IDE.
 1. I used VSCode as my Python IDE.
