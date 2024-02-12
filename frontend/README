@@ -1,0 +1,40 @@
+Installing FastAPI
+Reference Manual [Here](https://fastapi.tiangolo.com/tutorial/#install-fastapi]).
+If the above steps did not work, what worked for me was:
+1. Go to your start menu and type in "Manage App Execution Aliases" and turn off Python.
+2. a) For Windows:
+        Open Command Prompt from your start menu, and type "py -m pip install fastapi", then press enter.
+2. b) For Mac:
+        Open Terminal and type "pip install fastapi uvicorn"
+3. For Windows:
+        Then in the Command Prompt, type "py -m pip install uvicorn", then press enter.
+
+Installing an Integrated Development Environment/IDE.
+1. I used VSCode as my Python IDE.
+2. Installation for VSCode can be found [Here](https://code.visualstudio.com/download). 
+3. Launch VSCode, and download the Python Extension from your browser (or through VSCode in the second category from the bottom, where you type in "Python") if you have not yet. You can find the link (here)[https://marketplace.visualstudio.com/items?itemName=ms-python.python]
+
+FastAPI "Hello World"
+1. Create a folder on your desktop. Any name is fine - you can do "VSCode Test"
+2. in VSCode, open "VSCode Test" by going to File > Open Folder > VSCode Test
+3. In VSCode, create a new text file by going to File > New Text File, then paste in the following (without quotations):
+  "fastapi
+  redis
+  types-redis
+  uvicorn"
+4. Save the following text file by pressing CTRL + S, and save it as "requirements.txt"
+5. Create a Virtual Environment by pressing CTRL + Shift + P, then Python: Create Environment > Venv > Requirements.txt. Click "ok"
+6. Create a new (Python) file and save it as "main.py"
+7. Paste the following in "main.py"
+"from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}"
+8. You may receive a pop-up on which configuration file to use, click on "FastAPI".
+9. Navigate to the "Run and Debug" category to the left of VSCode (fourth from the top) and click on "Run and Debug".
+10. A terminal output will be displayed at the bottom of VSCode, and youll find the http link, which would look something like this: INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit). 
+11. You can click on the http link to view the "Hello World" page.
