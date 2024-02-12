@@ -1,27 +1,24 @@
 Installing FastAPI
-Reference Manual [Here](https://fastapi.tiangolo.com/tutorial/#install-fastapi]).
-If the above steps did not work, what worked for me was:
-1. Go to your start menu and type in "Manage App Execution Aliases" and turn off Python.
+1. Visit https://fastapi.tiangolo.com/tutorial/#install-fastapi, and follow the instructions
+If issues persist:
 2. Open Command Prompt from your start menu, and type "py -m pip install fastapi", then press enter.
 3. Then in the Command Prompt, type "py -m pip install uvicorn", then press enter.
 
-Installing an Integrated Development Environment/IDE.
-1. I used VSCode as my Python IDE.
-2. Installation for VSCode can be found [Here](https://code.visualstudio.com/download). 
-3. Launch VSCode, and download the Python Extension from your browser if you have not yet. You can find the link (here)[https://marketplace.visualstudio.com/items?itemName=ms-python.python]
+Installing an Integrated Development Environment (IDE).
+1. Using VSCode as our IDE, its installation can be found here: https://code.visualstudio.com/download.
+2. Launch VSCode, visit the "Extensions" tab, and download the Python extension.
 
 FastAPI "Hello World"
-1. Create a folder on your desktop. Any name is fine - you can do "VSCode Test"
+1. Create a folder on your desktop; for example, "VSCode Test"
 2. in VSCode, open "VSCode Test" by going to File > Open Folder > VSCode Test
 3. In VSCode, create a new text file by going to File > New Text File, then paste in the following (without quotations):
   "fastapi
   redis
   types-redis
   uvicorn"
-4. Save the following text file by pressing CTRL + S, and save it as "requirements.txt"
-5. Create a Virtual Environment by pressing CTRL + Shift + P, then Python: Create Environment > Venv > Requirements.txt. Click "ok"
-6. Create a new (Python) file and save it as "main.py"
-7. Paste the following in "main.py"
+4. Save the following text file as "requirements.txt"
+5. Create a Virtual Environment by pressing CTRL + Shift + P, then Python: Create Environment > Venv > Requirements.txt.
+6. Create a new (Python) file and save it as "main.py". Then paste the following:
 "from fastapi import FastAPI
 
 app = FastAPI()
@@ -31,6 +28,19 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}"
 8. You may receive a pop-up on which configuration file to use, click on "FastAPI".
-9. Navigate to the "Run and Debug" category to the left of VSCode (fourth from the top) and click on "Run and Debug".
-10. A terminal output will be displayed at the bottom of VSCode, and youll find the http link, which would look something like this: INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit). 
-11. You can click on the http link to view the "Hello World" page.
+9. Run the file by typing "uvicorn main:app --reload" in the terminal.
+10.  The terminal will output an http link, which should produce the "Hello World" page.
+
+Returning SQLite Verion
+1. Update the main.py file from above to include "import sqlite3", then replace the body after
+"@app.get("/")" with 
+    "conn = sqlite3.connect("database.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT sqlite_version()")
+    result = cursor.fetchone()[0]
+    conn.close()
+    return {"message": result}".
+2. This body will do several tasks:
+    Connect to the SQLite database and execute the query, then fetching and returning the result.
+
+
