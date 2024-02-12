@@ -41,6 +41,6 @@ Returning SQLite Verion
     conn.close()
     return {"message": result}".
 2. This body will do several tasks:
-    Connect to the SQLite database and execute the query, then fetching and returning the result.
+    Connect to the SQLite database and execute the query, then fetch and return the result.
 
 
