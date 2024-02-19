@@ -5,42 +5,30 @@ If issues persist:
 3. Then in the Command Prompt, type "py -m pip install uvicorn", then press enter.
 
 Installing an Integrated Development Environment (IDE).
-1. Using VSCode as our IDE, its installation can be found here: https://code.visualstudio.com/download.
-2. Launch VSCode, visit the "Extensions" tab, and download the Python extension.
+1. Using VSCode as our IDE, its installation can be found here: https://code.visualstudio.com/download. Afterwards, download the Python extension in VSCode.
 
 FastAPI "Hello World"
-1. Create a folder on your desktop; for example, "VSCode Test"
-2. in VSCode, open "VSCode Test" by going to File > Open Folder > VSCode Test
-3. In VSCode, create a new text file by going to File > New Text File, then paste in the following (without quotations):
+1. Create a folder on your desktop, and open the folder in VSCode.
+2. In VSCode, create a new text file, then paste in the following and save as "requirements.txt":
   "fastapi
   redis
   types-redis
   uvicorn"
-4. Save the following text file as "requirements.txt"
-5. Create a Virtual Environment by pressing CTRL + Shift + P, then Python: Create Environment > Venv > Requirements.txt.
-6. Create a new (Python) file and save it as "main.py". Then paste the following:
-"from fastapi import FastAPI
-
-app = FastAPI()
-
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}"
-8. You may receive a pop-up on which configuration file to use, click on "FastAPI".
-9. Run the file by typing "uvicorn main:app --reload" in the terminal.
-10.  The terminal will output an http link, which should produce the "Hello World" page.
+3. Create a Virtual Python Environment, then click on Venv and Requirements.txt.
+4. Follow the steps here to return "Hello World": https://fastapi.tiangolo.com/tutorial/first-steps/.
 
 Returning SQLite Verion
 1. Update the main.py file from above to include "import sqlite3", then replace the body after
-"@app.get("/")" with 
+"@app.get("/")" with: 
     "conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
     cursor.execute("SELECT sqlite_version()")
     result = cursor.fetchone()[0]
     conn.close()
     return {"message": result}".
-2. This body will do several tasks:
-    Connect to the SQLite database and execute the query, then fetch and return the result.
+
+Creating Tables
+1. Create a new file within the folder you wish to create the tables for, then run query.
+2. Follow the steps here: https://www.sqlitetutorial.net/sqlite-create-table/. 
 
 
