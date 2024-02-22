@@ -15,6 +15,7 @@ async def get_sqlite_data():
     
     cursor.execute("SELECT * FROM Courses")
     course_rows = cursor.fetchall()
+    print(len(course_rows))
     
     conn.close()
 
