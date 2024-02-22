@@ -11,8 +11,9 @@ async def get_sqlite_data():
     
     cursor.execute("SELECT * FROM Major")
     major_rows = cursor.fetchall()
+    print(len(major_rows))
     
-    cursor.execute("SELECT * FROM Course")
+    cursor.execute("SELECT * FROM Courses")
     course_rows = cursor.fetchall()
     
     conn.close()
@@ -24,7 +25,7 @@ async def get_sqlite_data():
 
     course_data = []
     for row in course_rows:
-        row_data = {"Course_Name": row[0], "Course_Code_Name": row[1], "Course_Code_Number": row[2], "Credits": row[3], "Description": row[4]}
+        row_data = {"Courses_Name": row[0], "Courses_Code_Name": row[1], "Courses_Code_Number": row[2], "Number_of_Credits": row[3], "Course_Description": row[4]}
         course_data.append(row_data)
 
     return {"major_data": major_data, "course_data": course_data}
