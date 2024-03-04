@@ -1,24 +1,27 @@
 Installing FastAPI
-1. Visit https://fastapi.tiangolo.com/tutorial/#install-fastapi, and follow the instructions
+1. Follow the instructions [here](https://fastapi.tiangolo.com/tutorial/#install-fastapi)
 If issues persist:
 2. Open Command Prompt from your start menu, and type "py -m pip install fastapi", then press enter.
 3. Then in the Command Prompt, type "py -m pip install uvicorn", then press enter.
 
 Installing an Integrated Development Environment (IDE).
-1. Using VSCode as our IDE, its installation can be found here: https://code.visualstudio.com/download. Afterwards, download the Python extension in VSCode.
+1. Using VSCode as our IDE, its installation can be found [here](https://code.visualstudio.com/download). Afterwards, download the Python extension in VSCode.
 
 FastAPI "Hello World"
 1. Create a folder on your desktop, and open the folder in VSCode.
 2. In VSCode, create a new text file, then paste in the following and save as "requirements.txt":
+```
   "fastapi
   redis
   types-redis
   uvicorn"
+```
 3. Create a Virtual Python Environment, then click on Venv and Requirements.txt.
-4. Follow the steps here to return "Hello World": https://fastapi.tiangolo.com/tutorial/first-steps/.
+4. Follow the steps [here](https://fastapi.tiangolo.com/tutorial/first-steps/) to return "Hello World"
 
 Returning SQLite Verion
-1. Update the main.py file from above to include "import sqlite3", then replace the body after
+1. Update the main.py file from above to include "import sqlite3", then replace the body after with
+```
 "@app.get("/")" with: 
     "conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
@@ -26,9 +29,11 @@ Returning SQLite Verion
     result = cursor.fetchone()[0]
     conn.close()
     return {"message": result}".
-
+```
 Creating Tables
 1. Create a new file within the folder you wish to create the tables for, then run query.
-2. Follow the steps here: https://www.sqlitetutorial.net/sqlite-create-table/. 
+2. Follow the steps [here](https://www.sqlitetutorial.net/sqlite-create-table/)
 
-
+Created POST Endpoints
+1. Follow the documentation [here](https://fastapi.tiangolo.com/tutorial/first-steps/#step-3-create-a-path-operation)
+2. Install the POSTMAN extension on VSCode, or visit the /doc link after running the server, and test each POST functions.

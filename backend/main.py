@@ -1,8 +1,19 @@
 from fastapi import FastAPI
 import sqlite3
+from pydantic import BaseModel
 
 app = FastAPI()
 
+class Major(BaseModel):
+    name: str
+    year: int
+
+class Courses(BaseModel):
+    name: str
+    code_name: str
+    code_number: int
+    credits: int
+    description: str
 
 @app.get("/")
 async def get_sqlite_data():
@@ -12,7 +23,7 @@ async def get_sqlite_data():
     cursor.execute("SELECT * FROM Major")
     major_rows = cursor.fetchall()
     print(len(major_rows))
-    
+
     cursor.execute("SELECT * FROM Courses")
     course_rows = cursor.fetchall()
     print(len(course_rows))
@@ -30,6 +41,14 @@ async def get_sqlite_data():
         course_data.append(row_data)
 
     return {"major_data": major_data, "course_data": course_data}
+
+@app.post("/major/", response_model=Major, status_code=201)
+async def create_major(major: Major):
+    return major
+
+@app.post("/courses/", response_model=Courses, status_code=201)
+async def create_courses(courses: Courses):
+    return courses
 
 
 #async def get_sqlite_version():
