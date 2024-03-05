@@ -53,4 +53,4 @@ Creating Tables
 
 Created POST Endpoints
 1. Follow the documentation [here](https://fastapi.tiangolo.com/tutorial/first-steps/#step-3-create-a-path-operation)
-2. Install the POSTMAN extension on VSCode, or visit the /doc link after running the server, and test each POST functions.
+2. Install the POSTMAN extension on VSCode, or visit the /doc link after running the server, and test each POST functions. If using POSTMAN, ensure that you set the text type to JSON.
